@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app='App'>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="ang.js"></script>
+  </head>
+  <body  ng-controller="contr">
+
+    <div class="div1">
+      <span style="position:absolute;top:30px;">Welcome</span>
+      <div class="div12">Search product here:<input type="text" placeholder="Search Brand" ng-model="searchKey"></input></div>
+    </div>
+
+      <table class="t1">
+        <tr>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Quantity Available</th>
+        <th>Add to cart?</th>
+      </tr>
+      <tr ng-repeat="pdt in products | filter:searchKey | orderBy:selectedFilter:selectedFilterType">
+          <td>{{pdt.image}}</td>
+          <td>{{pdt.brand}}</td>
+          <td>{{pdt.price}}</td>
+          <td>{{pdt.discount}}%</td>
+          <td>{{pdt.quantity}}</td>
+          <td><button type="button" ng-click="Update(pdt)">Add</button></td>
+      </tr>
+      </table>
+
+
+    </div>
+
+    <div class="div3">
+      <h1>Your Cart</h1>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Cost</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+        </tr>
+      </tr>
+        <tr ng-repeat="pdt in products | filter:fill">
+          <td>{{pdt.brand}}</td>
+          <td>{{pdt.price}}</td>
+          <td>{{pdt.add}}</td>
+          <td>{{ pdt.am }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td style="background:red;width:0.5em;">Total:{{ total }}</td>
+        </tr>
+      </table>
+
+    </div>
+
+  </body>
+</html>

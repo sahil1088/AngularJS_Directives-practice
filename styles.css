@@ -1,0 +1,40 @@
+*{
+  padding:5px;
+  border-radius: 5px;
+}
+body{
+  background: lightblue;
+  font-family:cursive;
+}
+.div1{
+  height:100px;
+  background:magenta;
+  border-radius: 5px;
+  font-size: 50px;
+}
+.div12{
+  position: absolute;
+  left:900px;
+  top:50px;
+  font-size: 20px;
+}
+table{
+
+  width:850px;
+  margin-top: 10px;
+  /*border:1px solid;*/
+  text-align: center;
+}
+.div3{
+  background: #f4f4f4;
+  width:900px;
+  height:100%;
+  margin-top:20px;
+
+}
+.div3 h1{
+  text-align: center;
+  background: steelblue;
+
+  margin:auto;
+}
